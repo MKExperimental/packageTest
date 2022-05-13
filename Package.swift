@@ -10,6 +10,9 @@ let package = Package(
         .library(
             name: "MyLibrary",
             targets: ["MyLibrary"]),
+        .library(
+            name: "TestFramework",
+            targets: ["TestFramework"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -24,5 +27,6 @@ let package = Package(
         .testTarget(
             name: "MyLibraryTests",
             dependencies: ["MyLibrary"]),
+        .binaryTarget(name: "TestFramework", path: "./Sources/TestFramework.xcframework"),
     ]
 )
